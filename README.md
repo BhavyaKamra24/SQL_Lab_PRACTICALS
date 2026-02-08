@@ -1,0 +1,27 @@
+# SQL Practicals
+
+This repository contains my SQL practical programs.
+
+## Databases Included
+- Movie_dB
+- iilm_db
+- bhavya_kamra_db
+### bhavya_kamra_db
+Contains:
+- Practical 1 : Employee & Department
+- Practical 2 : Basic SQL Queries
+- Practical 3 : Advanced SQL Queries
+
+## Topics Covered
+- CREATE DATABASE
+- CREATE TABLE
+- INSERT
+- SELECT
+- Basic SQL Queries
+
+## Tools Used
+- MySQL
+- VS Code
+- GitHub
+
+Created by: Bhavya Kamra
