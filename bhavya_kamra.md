@@ -1,12 +1,18 @@
+# practical question-1 :-
+## create database.
 ```sql
 CREATE DATABASE bhavya_kamra;
 
 USE bhavya_kamra;
-
+```
+## create department table.
+```sql
 CREATE TABLE Department (
 -> DepNo INT PRIMARY KEY,
 -> DName VARCHAR(15) NOT NULL) ENGINE=InnoDB;
-
+```
+## create employee table.
+```sql
 CREATE TABLE Employee (
 -> EmpNo INT PRIMARY KEY,
 -> EName VARCHAR(20) NOT NULL,
@@ -17,13 +23,17 @@ CREATE TABLE Employee (
 -> Comm INT,
 -> DepNo INT,
 -> FOREIGN KEY (DepNo) REFERENCES Department(DepNo)) ENGINE=InnoDB;
-
+```
+## inserting values in department table.
+```sql
 INSERT INTO Department VALUES
 -> (10, 'RESEARCH'),
 -> (20, 'ACCOUNTING'),
 -> (30, 'SALES'),
 -> (40, 'OPERATIONS');
-
+```
+## inserting values in employee table.
+```sql
 INSERT INTO Employee VALUES
 -> (7369, 'SMITH', 'CLERK', 7902, '1980-12-17', 800, NULL, 20),
 -> (7499, 'ALLEN', 'SALESMAN', 7698, '1981-02-20', 1600, 300, 30),
@@ -38,141 +48,38 @@ INSERT INTO Employee VALUES
 -> (7876, 'ADAMS', 'CLERK', 7788, '1981-12-13', 1100, NULL, 20),
 -> (7900, 'JAMES', 'CLERK', 7698, '1981-12-03', 950, NULL, 30),
 -> (7934, 'MILLER', 'CLERK', 7782, '1982-01-23', 1300, NULL, 10);
+```
 
-SHOW TABLES;
+# QUERIES:
 
-DESC Employee;
+## PRACTICAL QUESTION 1:
 
-DESC Department;
-
-## QUERIES:
-# PRACTICAL QUESTION 1:
-
-## Create Employee_master Table
+### Create Employee_master Table
+```sql
 CREATE TABLE Employee_master AS 
 SELECT * FROM Employee;
-
-## Delete Employee_master Table
+```
+### Delete Employee_master Table
+```sql
 DELETE FROM Employee_master
 WHERE DepNo = 10;
-
-## Update Employee_master Table
+```
+### Update Employee_master Table
+```sql
 UPDATE Employee_master
 SET Sal = Sal + (Sal * 0.10)
 WHERE DepNo = 20;
-
-## Alter Employee_master Table
+```
+### Alter Employee_master Table
+```sql
 ALTER TABLE Employee_master
 -> MODIFY Sal DECIMAL(10,2);
-
-## Drop Employee_master Table
-DROP TABLE Employee_master;
-
-# PRACTICAL QUESTION 2:
-
-##  List all distinct job in Employee.
-SELECT DISTINCT Job 
-FROM Employee;
-
-## List all info about employees in DepNo 30
-SELECT * 
-FROM Employee 
-WHERE DepNo = 30;
-
-## Find DepNo > 20
-SELECT DepNo 
-FROM Employee 
-WHERE DepNo > 20;
-
-## Managers and Clerks in DepNo 30
-SELECT *
-FROM Employee
-WHERE DepNo = 30
-AND Job IN ('MANAGER','CLERK');
-
-## EName, EmpNo, DepNo of all Clerks
-SELECT EName, EmpNo, DepNo
-FROM Employee
-WHERE Job = 'CLERK';
-
-## Managers not in DepNo 30
-SELECT *
-FROM Employee
-WHERE Job = 'MANAGER' AND DepNo <> 30;
-
-## Employees in department 10 who are not Managers and Clerks
-SELECT *
-FROM Employee
-WHERE DepNo = 10
-AND Job NOT IN ('MANAGER','CLERK');
-
-## Employees earning between 1200 and 1400
-SELECT EName, Job
-FROM Employee
-WHERE Sal BETWEEN 1200 AND 1400;
-
-## EName, DepNo of Clerk,Analyst,Salesman
-SELECT EName, DepNo
-FROM Employee
-WHERE Job IN ('CLERK','ANALYST','SALESMAN');
-
-## Employee whose name starts with M
-SELECT EName, DepNo
-FROM Employee
-WHERE EName LIKE 'M%';
-
-# PRACTICAL QUESTION 3:
-
-## Employees & Jobs - DepNo 30 Desc Salary
-SELECT EName, Job, Sal
-FROM Employee
-WHERE DepNo = 30
-ORDER BY Sal DESC;
-
-## 5 Letter Names Start A End N
-SELECT EName, DepNo
-FROM Employee
-WHERE EName LIKE 'A___N';
-
-## Names Starting with S
-SELECT EName
-FROM Employee
-WHERE EName LIKE 'S%';
-
-## Names Ending with S
-SELECT EName
-FROM Employee
-WHERE EName LIKE '%S';
-
-## DepNo 10,20,30 OR Job Clerk,Salesman,Analyst
-SELECT EName
-FROM Employee
-WHERE DepNo IN (10,20,40) OR Job IN ('CLERK','SALESMAN', 'ANALYST');
-
-## Employees with Comm
-SELECT EName, EmpNo
-FROM Employee
-WHERE Comm IS NOT NULL;
-
-## Employee Total Salary
-SELECT EmpNo, (Sal + IFNULL(Comm,0)) AS Total_Salary
-FROM Employee;
-
-## Employee Annual Salary
-SELECT EmpNo, (Sal + IFNULL(Comm,0)) * 12 AS Annual_Salary
-FROM Employee;
-
-## Clerk Salary > 3000
-SELECT EName
-FROM Employee
-WHERE Job = 'CLERK' AND Sal > 3000;
-
-## Clerk,Salesman,Analyst Salary > 3000
-SELECT EName
-FROM Employee
-WHERE Job IN ('CLERK', 'SALESMAN' 'ANALYST') AND Sal > 3000;
 ```
-
+### Drop Employee_master Table
+```sql
+DROP TABLE Employee_master;
+```
+----
 
 
 
