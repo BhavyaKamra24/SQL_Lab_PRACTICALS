@@ -186,7 +186,7 @@ MariaDB [bhavya]> SELECT CONCAT(UPPER(SUBSTR(ENAME,1,1)),LOWER(SUBSTR(ENAME,2)))
 ```
 ## 14. DISPLAY LENGTH OF YOUR NAME.
 ```SQL
-MariaDB [bhavya]> SELECT LENGTH('KAUSHAL');
+MariaDB [bhavya]> SELECT LENGTH('bhavya');
 +-------------------+
 | LENGTH('bhavya') |
 +-------------------+
