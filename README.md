@@ -11,6 +11,8 @@ Contains:
 - Practical 1 : Employee & Department
 - Practical 2 : Basic SQL Queries
 - Practical 3 : Advanced SQL Queries
+- Practical 4 : Implementation of Conditional and Airthmetic SQL Queries on Employee Table
+- Practical 5 : Implementation Of Agreegate and String Functions in SQL
 
 ## Topics Covered
 - CREATE DATABASE
