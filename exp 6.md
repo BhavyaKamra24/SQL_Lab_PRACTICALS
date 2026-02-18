@@ -143,7 +143,12 @@ MariaDB [bhavya]> select ename,hiredate
 4 rows in set (0.001 sec)
 ```
 ---
-## 11.
+## 11. DISPLAY THOSE EMPLOYEE WHOSE FIRST 2 CHARACTER FROM HIRE DATE IS EQUAL TO LAST 2 CHARACTER FROM SALARY.
+```SQL
+MariaDB [bhavya]> SELECT ENAME FROM EMPLOYEE
+    -> WHERE LEFT(HIREDATE,2) = RIGHT(SAL,2);
+Empty set (0.066 sec)
+```
 
 ## 12. show names of employee who have 10% of salary equal to date of hire.
 ```sql
