@@ -1,7 +1,7 @@
 # EXPERIMENT-7: 
 ## Q1. Compute the number of days remaining in this year.
 ```sql
-SELECT DATEDIFF(
+MariaDB [bhavya]> SELECT DATEDIFF(
        CONCAT(YEAR(CURDATE()), '-12-31'),
        CURDATE()
 ) AS REMAINING_DAYS;
@@ -131,7 +131,7 @@ MariaDB [bhavya]> SELECT DEPTNO, COUNT(*) AS TOTAL_EMPLOYEES
 ```
 ## Q9. Display various jobs and total number of employees within each job group.
 ``` sql
-MMariaDB [bhavya]> SELECT JOB, COUNT(*) AS TOTAL_EMPLOYEES
+MariaDB [bhavya]> SELECT JOB, COUNT(*) AS TOTAL_EMPLOYEES
     -> FROM EMPLOYEE
     -> GROUP BY JOB;
 +-----------+-----------------+
