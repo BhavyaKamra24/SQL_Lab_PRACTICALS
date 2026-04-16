@@ -137,7 +137,7 @@ MariaDB [bhavya]> SELECT Ename
 7 rows in set (0.003 sec)
 ```
 
-## Q9.Display the names of employees who are working in chicago.
+## Q9.Display the names of employees who are working in mumbai.
 ```sql
 MariaDB [bhavya]> SELECT Ename
     -> FROM Employee
